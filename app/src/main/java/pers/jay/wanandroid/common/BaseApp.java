@@ -18,7 +18,7 @@ public class BaseApp extends Application implements Application.ActivityLifecycl
     public void onCreate() {
         super.onCreate();
         application = this;
-        registerActivityLifecycleCallbacks(this);
+        registerActivityLifecycleCallbacks(this);//qdd 21-1-6 用来做什么？
     }
 
     public static Application getApp() {
@@ -29,6 +29,7 @@ public class BaseApp extends Application implements Application.ActivityLifecycl
         }
     }
 
+    //qdd 21-1-6 通用代码
     /**
      * 判断Android程序是否在前台运行
      */
@@ -55,6 +56,8 @@ public class BaseApp extends Application implements Application.ActivityLifecycl
         return application.getApplicationContext();
     }
 
+
+    //qdd 21-1-6 以下是ActivityLifecycleCallbacks接口方法
     @Override
     public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
 

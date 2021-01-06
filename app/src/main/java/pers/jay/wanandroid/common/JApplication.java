@@ -26,6 +26,8 @@ import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.BezierRadarHeader;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.tencent.bugly.Bugly;
 import com.vondear.rxtool.RxTool;
 import com.ycbjie.webviewlib.X5WebUtils;
@@ -45,6 +47,7 @@ import timber.log.Timber;
 
 public class JApplication extends BaseApp implements App{
 
+    //qdd 21-1-6 SmartRefreshLayout的默认代码，设置下拉刷新显示样式。
     //static 代码段可以防止内存泄露
     //此设置优先级是最低的，如果同时还使用了方法二、三，将会被其它方法取代
     static {
@@ -66,6 +69,7 @@ public class JApplication extends BaseApp implements App{
                     }
                 });
     }
+    //qdd 21-1-6 SmartRefreshLayout的默认代码，设置下拉刷新显示样式。
 
     private AppLifecycles mAppDelegate;
     private static JApplication mApplication;
@@ -75,6 +79,7 @@ public class JApplication extends BaseApp implements App{
         return mApplication;
     }
 
+    //qdd 21-1-6 系统方法,设置application为context。这个方法调用后getApplicationContext才有返回值。
     /**
      * 这里会在 {@link BaseApplication#onCreate} 之前被调用,可以做一些较早的初始化
      * 常用于 MultiDex 以及插件化框架的初始化
