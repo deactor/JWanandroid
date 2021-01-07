@@ -57,6 +57,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     private BasePagerAdapter<String, Fragment> fragmentPagerAdapter;
     private boolean loginShowing;
 
+    //qdd 21-1-7 MVPArms中IActivity中的方法。
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerMainComponent //如找不到该类,请编译一下项目
@@ -107,13 +108,14 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                 });
         fragmentPagerAdapter.setData(Arrays.asList(titles));
         viewPager.setAdapter(fragmentPagerAdapter);
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
     }
 
     private void setFullScreen(boolean isFullScreen) {
         setTheme(isFullScreen ? R.style.LaunchTheme : R.style.AppTheme);
     }
 
+    //qdd 21-1-7 下面几个重写的方法是MVPArms中IView的方法。
     @Override
     public void showMessage(@NonNull String message) {
         checkNotNull(message);
